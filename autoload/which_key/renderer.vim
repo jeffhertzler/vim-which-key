@@ -105,6 +105,9 @@ function! s:create_rows(layout, mappings) abort
   endfor
 
   let smap = leaf_keys + dict_keys
+  if (g:which_key_sort_includes_nested)
+    smap = sort(smap)
+  endif
 
   let displaynames = which_key#renderer#get_displaynames()
   if get(g:, 'which_key_align_by_seperator', 1)
