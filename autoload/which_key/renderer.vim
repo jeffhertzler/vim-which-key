@@ -105,7 +105,7 @@ function! s:create_rows(layout, mappings) abort
   endfor
 
   let smap = leaf_keys + dict_keys
-  if (g:which_key_sort_includes_nested)
+  if g:which_key_sort_includes_nested
     smap = sort(smap)
   endif
 
